@@ -1,0 +1,21 @@
+{
+  "name": "karlapi",
+  "version": "1.0.0",
+  "description": "Free and Open Source Jokes API",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "limiting-middleware": "^1.3.2",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dadjokes",
+    "jokes"
+  ],
+  "author": "Eklavya",
+  "license": "MIT"
+}
