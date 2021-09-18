@@ -40,7 +40,7 @@ Since the authors are not accepting PRs' and also the server is unavailable, we 
 
 #### Get ten random joke by type
 ```http
-POST /jokes/{type}/{number}
+  POST /jokes/{type}/{number}
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -49,7 +49,7 @@ POST /jokes/{type}/{number}
 
 #### Get joke by type and id
 ```http
-POST /jokes/{type}/{id}
+  POST /jokes/{type}/{id}
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
