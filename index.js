@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.post('/', (req, res) => {
-  res.send('Available Public Endpoints\n/jokes/random\n/jokes/ten\n/jokes/{id}\n/jokes/{type}/random\n/jokes/{type}/{ten}\n/jokes/{type}/{id}\nWant to contribute? Just create a PR on blablabla.com 😀');
+  res.send('Available Public Endpoints\n/jokes/random\n/jokes/ten\n/jokes/{id}\n/jokes/{type}/random\n/jokes/{type}/{number}\n/jokes/{type}/{id}\nWant to contribute? Just create a PR on blablabla.com 😀');
 });
 
 app.post('/jokes/random', (req, res) => {
