@@ -39,7 +39,7 @@ Since the authors are not accepting PRs' and also the server is unavailable, we 
 | :-------- | :------- | :-------------------------------- |
 | `type`      | `string` | **Required**. Category of joke |
 
-#### Get ten random joke by type
+#### Get number of random jokes by type
 ```http
   POST /jokes/{type}/{number}
 ```
