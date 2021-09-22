@@ -1,0 +1,26 @@
+{
+  "name": "karlapi",
+  "version": "1.0.0",
+  "description": "A free and open-source restful API to fetch dad-jokes",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "limiting-middleware": "^1.3.2",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eklavyadev/karljoke.git"
+  },
+  "author": "Eklavya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eklavyadev/karljoke/issues"
+  },
+  "homepage": "https://github.com/eklavyadev/karljoke#readme"
+}
