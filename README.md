@@ -1,5 +1,4 @@
 
-![Logo](karljoke.png)
 # KarlJoke
 
 A free and open-source restful API to fetch dadjokes
