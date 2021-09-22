@@ -5,7 +5,7 @@ A free and open-source restful API to fetch dadjokes
 
 Inspired from https://github.com/15Dkatz/official_joke_api
 
-Since the authors are not accepting PRs' and also the server is unavailable, we have a new system in place as an alternative 🚀
+Since the creators are not accepting PRs' and also the server is unavailable, we have a new system in place as an alternative 🚀
 
 
 ## Public Endpoints
