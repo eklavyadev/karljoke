@@ -13,17 +13,17 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 #### Get a random joke
 
 ```http
-  POST /jokes/random
+  GET /jokes/random
 ```
 #### Get ten random jokes
 
 ```http
-  POST /jokes/ten
+  GET /jokes/ten
 ```
 #### Get number of random jokes
 
 ```http
-  POST /jokes/{number}
+  GET /jokes/{number}
 ```
 
 | Parameter | Type     | Description                       |
@@ -32,7 +32,7 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 
 #### Get random joke by type
 ```http
-  POST /jokes/{type}/random
+  GET /jokes/{type}/random
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -40,7 +40,7 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 
 #### Get number of random jokes by type
 ```http
-  POST /jokes/{type}/{number}
+  GET /jokes/{type}/{number}
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -49,7 +49,7 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 
 #### Get joke by type and id
 ```http
-  POST /jokes/{type}/{id}
+  GET /jokes/{type}/{id}
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
