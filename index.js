@@ -16,32 +16,32 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Available Public Endpoints\n/jokes/random\n/jokes/ten\n/jokes/{id}\n/jokes/{type}/random\n/jokes/{type}/{number}\n/jokes/{type}/{id}\nWant to contribute? Just create a PR on blablabla.com 😀');
 });
 
-app.post('/jokes/random', (req, res) => {
+app.get('/jokes/random', (req, res) => {
   res.json(randomJoke());
 });
 
-app.post('/jokes/ten', (req, res) => {
+app.get('/jokes/ten', (req, res) => {
   res.json(randomTen());
 });
 
-app.post('/jokes/:id', (req, res) => {
+app.get('/jokes/:id', (req, res) => {
     const number = parseInt(req.params.id)
     res.json(randomNum(number));
   });
 
-app.post('/jokes/:type/random', (req, res) => {
+app.get('/jokes/:type/random', (req, res) => {
   res.json(jokeByType(req.params.type, 1));
 });
 
-app.post('/jokes/:type/ten', (req, res) => {
+app.get('/jokes/:type/ten', (req, res) => {
   res.json(jokeByType(req.params.type, 10));
 });
 
-app.post('/jokes/:type/:id', (req, res) => {
+app.get('/jokes/:type/:id', (req, res) => {
     res.json(jokeByType(req.params.type, parseInt(req.params.id)));
   });
 
