@@ -1,7 +1,7 @@
 
 # KarlJoke
 
-A free and open-source restful API to fetch dadjokes
+A free and open-source API to fetch dadjokes
 
 Inspired from https://github.com/15Dkatz/official_joke_api
 
