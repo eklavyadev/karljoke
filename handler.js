@@ -5,7 +5,7 @@ const randomJoke = () => {
 }
 
 /**
- * Get N random jokes from a jokeArray
+ * Get N number of random jokes from a jokeArray
  */
 const randomN = (jokeArray, n) => {
   const limit = jokeArray.length < n ? jokeArray.length : n;
@@ -24,6 +24,7 @@ const randomN = (jokeArray, n) => {
 };
 
 const randomTen = () => randomN(jokes, 10);
+// Get num number of jokes
 const randomNum = (num) => randomN(jokes, num)
 const jokeByType = (type, n) => {
   return randomN(jokes.filter(joke => joke.type === type), n);
