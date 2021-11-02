@@ -47,15 +47,6 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 | `type`      | `string` | **Required**. Category of joke |
 | `number`      | `int` | **Required**. Number of jokes to fetch |
 
-#### Get joke by type and id
-```http
-  GET /jokes/{type}/{id}
-```
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `type`      | `string` | **Required**. Category of joke |
-| `id`      | `int` | **Required**. ID of joke |
-
 
 
 
