@@ -49,7 +49,7 @@ Since the creators are not accepting PRs' and also the server is unavailable, we
 
 #### Get joke by type and id
 ```http
-  GET /jokes/{type}/{id}
+  GET /joke/{type}/{id}
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
