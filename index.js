@@ -41,7 +41,7 @@ app.get('/jokes/:type/ten', (req, res) => {
   res.json(jokeByType(req.params.type, 10));
 });
 
-app.get('/jokes/:type/:id', (req, res) => {
+app.get('/joke/:type/:id', (req, res) => {
     res.json(jokeByType(req.params.type, parseInt(req.params.id)));
   });
 
