@@ -41,6 +41,10 @@ app.get('/jokes/:type/ten', (req, res) => {
   res.json(jokeByType(req.params.type, 10));
 });
 
+app.get('/jokes/:type/:num', (req, res) => {
+    res.json(jokeByType(req.params.type, parseInt(req.params.num)));
+  });
+
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 
