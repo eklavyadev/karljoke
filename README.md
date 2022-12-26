@@ -1,5 +1,6 @@
 
 # KarlJoke
+NOTE:- We have moved to https://karljoke.up.railway.app
 
 A free and open-source API to fetch dadjokes
 
