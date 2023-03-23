@@ -1,6 +1,6 @@
 
 # KarlJoke
-NOTE:- We have moved to https://karljoke.up.railway.app
+NOTE:- OUTDATED API, CURRENTLY INACTIVE. PLEASE MOVE TO https://github.com/15Dkatz/official_joke_api
 
 A free and open-source API to fetch dadjokes
 
