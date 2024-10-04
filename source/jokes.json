@@ -2272,5 +2272,10 @@
       "type": "general",
       "setup": "What do you call a suspicious looking laptop?",
       "punchline": "Asus"
+    },{
+        "id": 399,
+        "type": "general",
+        "setup": "My girlfriend dumped me after I named a class after her."
+        "punchline": "She felt I treated her like an object."
     }
   ]
