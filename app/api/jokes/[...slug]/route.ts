@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { randomNum, jokeByType } from '@/lib/jokes';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(
   request: Request,
   { params }: { params: { slug: string[] } }
