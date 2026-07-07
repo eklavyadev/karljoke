@@ -1,69 +1,129 @@
-
 # KarlJoke
-NOTE:- OUTDATED API, CURRENTLY INACTIVE. PLEASE MOVE TO https://github.com/15Dkatz/official_joke_api
 
-A free and open-source API to fetch dadjokes
+A free and open-source API to fetch dad jokes, now rebuilt with Next.js 14, TypeScript, and Tailwind CSS.
 
-Inspired from https://github.com/15Dkatz/official_joke_api
+Inspired by https://github.com/15Dkatz/official_joke_api
 
-Since the creators are not accepting PRs' and also the server is unavailable, we have a new system in place as an alternative 🚀
+## Features
 
+- **Free & Open Source**: No API keys required, completely free to use
+- **Multiple Endpoints**: Fetch single jokes, multiple jokes, or jokes by category
+- **Type-Safe**: Built with TypeScript for better developer experience
+- **Modern UI**: Clean, responsive interface with Tailwind CSS
+- **Fast**: Built on Next.js App Router for optimal performance
 
 ## Public Endpoints
+
+All endpoints are prefixed with `/api`
 
 #### Get a random joke
 
 ```http
-  GET /jokes/random
+GET /api/jokes/random
 ```
+
 #### Get ten random jokes
 
 ```http
-  GET /jokes/ten
+GET /api/jokes/ten
 ```
-#### Get number of random jokes
+
+#### Get a specific number of random jokes
 
 ```http
-  GET /jokes/{number}
+GET /api/jokes/{number}
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `number`      | `int` | **Required**. Number of jokes to fetch |
+| `number`  | `int`    | **Required**. Number of jokes to fetch |
 
-#### Get random joke by type
+#### Get a random joke by type
+
 ```http
-  GET /jokes/{type}/random
+GET /api/jokes/{type}/random
 ```
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `type`      | `string` | **Required**. Category of joke |
+| `type`    | `string` | **Required**. Category of joke    |
 
-#### Get number of random jokes by type
+#### Get ten random jokes by type
+
 ```http
-  GET /jokes/{type}/{number}
+GET /api/jokes/{type}/ten
 ```
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `type`      | `string` | **Required**. Category of joke |
-| `number`      | `int` | **Required**. Number of jokes to fetch |
+| `type`    | `string` | **Required**. Category of joke    |
 
+#### Get a specific number of random jokes by type
 
+```http
+GET /api/jokes/{type}/{number}
+```
 
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `type`    | `string` | **Required**. Category of joke    |
+| `number`  | `int`    | **Required**. Number of jokes to fetch |
 
-  
-## Authors
+## Example Response
 
-- [Eklavya Chandra](https://www.github.com/eklavyadev)
+```json
+{
+  "id": 1,
+  "type": "general",
+  "setup": "What did the fish say when it hit the wall?",
+  "punchline": "Dam."
+}
+```
 
-  
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/eklavyadev/karljoke.git
+```
+
+Go to the project directory
+
+```bash
+cd karljoke
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+Build for production
+
+```bash
+npm run build
+npm start
+```
+
 ## Contributing
 
 Contributions are always welcome!
 
-### Implement jokes.json with this structure
-```
-},
+### Adding new jokes
+
+To add new jokes, edit `source/jokes.json` with the following structure:
+
+```json
 {
   "id": last joke id + 1,
   "type": "Your category here",
@@ -72,33 +132,19 @@ Contributions are always welcome!
 }
 ```
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's code of conduct.
 
-  
-## Run Locally
+## Tech Stack
 
-Clone the project
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **React 18** - UI library
 
-```bash
-  git clone https://github.com/eklavyadev/karljoke.git
-```
+## Authors
 
-Go to the project directory
+- [Eklavya Chandra](https://www.github.com/eklavyadev)
 
-```bash
-  cd karljoke
-```
+## License
 
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-  
+This project is licensed under the MIT License - see the LICENSE file for details.
