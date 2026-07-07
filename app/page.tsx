@@ -63,7 +63,7 @@ export default function Home() {
               <span className="font-semibold">Star on GitHub</span>
               {starCount !== null && (
                 <span className="bg-white/20 px-3 py-1 text-sm font-medium">
-                  {starCount}
+                  ⭐ {starCount}
                 </span>
               )}
             </a>
