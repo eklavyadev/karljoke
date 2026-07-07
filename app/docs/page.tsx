@@ -2,18 +2,27 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { fetchJson } from "@/lib/fetcher";
+
+interface Joke {
+  id: number;
+  type: string;
+  setup: string;
+  punchline: string;
+}
+
+type EndpointResult = Joke | Joke[] | { error: string };
 
 export default function Docs() {
-  const [results, setResults] = useState<Record<number, any>>({});
+  const [results, setResults] = useState<Record<number, EndpointResult>>({});
   const [loading, setLoading] = useState<Record<number, boolean>>({});
 
   async function testEndpoint(index: number, testPath: string) {
     setLoading((prev) => ({ ...prev, [index]: true }));
     try {
-      const response = await fetch(testPath);
-      const data = await response.json();
+      const data = await fetchJson<EndpointResult>(testPath);
       setResults((prev) => ({ ...prev, [index]: data }));
-    } catch (error) {
+    } catch {
       setResults((prev) => ({ ...prev, [index]: { error: "Failed to fetch" } }));
     } finally {
       setLoading((prev) => ({ ...prev, [index]: false }));
