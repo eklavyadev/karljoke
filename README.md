@@ -143,7 +143,7 @@ Please adhere to this project's code of conduct.
 
 ## Authors
 
-- [Eklavya Chandra](https://www.github.com/eklavyadev)
+- [Eklavya Singh](https://www.github.com/eklavyadev)
 
 ## License
 
