@@ -1,33 +1,40 @@
 const jokes = require('./source/jokes.json');
 
-const randomJoke = () => {
-  return jokes[Math.floor(Math.random() * jokes.length)];
-}
+const randomJoke = () => jokes[Math.floor(Math.random() * jokes.length)];
 
 /**
- * Get N number of random jokes from a jokeArray
+ * Get N number of random jokes from a jokeArray.
+ * Returns a unique selection and safely handles invalid counts.
  */
 const randomN = (jokeArray, n) => {
-  const limit = jokeArray.length < n ? jokeArray.length : n;
-  const randomIndicesSet = new Set();
-
-  while (randomIndicesSet.size < limit) {
-    const randomIndex = Math.floor(Math.random() * jokeArray.length);
-    if (!randomIndicesSet.has(randomIndex)) {
-      randomIndicesSet.add(randomIndex);
-    }
+  if (!Array.isArray(jokeArray) || jokeArray.length === 0) {
+    return [];
   }
 
-  return Array.from(randomIndicesSet).map(randomIndex => {
-    return jokeArray[randomIndex];
-  });
+  const count = Number.isInteger(n) && n > 0 ? n : 1;
+  const limit = Math.min(jokeArray.length, count);
+
+  if (limit === jokeArray.length) {
+    return [...jokeArray];
+  }
+
+  const randomIndices = new Set();
+
+  while (randomIndices.size < limit) {
+    const randomIndex = Math.floor(Math.random() * jokeArray.length);
+    randomIndices.add(randomIndex);
+  }
+
+  return Array.from(randomIndices, (randomIndex) => jokeArray[randomIndex]);
 };
 
 const randomTen = () => randomN(jokes, 10);
-// Get num number of jokes
-const randomNum = (num) => randomN(jokes, num)
+const randomNum = (num) => randomN(jokes, Math.max(1, Number(num) || 1));
 const jokeByType = (type, n) => {
-  return randomN(jokes.filter(joke => joke.type === type), n);
+  const normalizedType = typeof type === 'string' ? type.toLowerCase() : '';
+  const filtered = jokes.filter((joke) => joke.type.toLowerCase() === normalizedType);
+
+  return randomN(filtered, n);
 };
 
-module.exports = { jokes, randomNum ,randomJoke, randomN, randomTen, jokeByType };
+module.exports = { jokes, randomNum, randomJoke, randomN, randomTen, jokeByType };

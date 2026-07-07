@@ -2,21 +2,34 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { fetchJson } from "@/lib/fetcher";
+
+interface Joke {
+  id: number;
+  type: string;
+  setup: string;
+  punchline: string;
+}
+
+interface GitHubStarsResponse {
+  stargazers_count: number;
+}
 
 export default function Home() {
-  const [joke, setJoke] = useState<any>(null);
+  const [joke, setJoke] = useState<Joke | null>(null);
   const [loading, setLoading] = useState(false);
   const [starCount, setStarCount] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchStarCount() {
       try {
-        const response = await fetch("https://api.github.com/repos/eklavyadev/karljoke");
-        if (!response.ok) throw new Error("Unable to fetch stars");
-        const data = await response.json();
+        const data = await fetchJson<GitHubStarsResponse>("https://api.github.com/repos/eklavyadev/karljoke", {
+          headers: { Accept: "application/vnd.github+json" },
+        });
         setStarCount(data.stargazers_count);
-      } catch (error) {
-        console.error("Failed to fetch star count");
+      } catch {
+        setError("Unable to load GitHub stars right now.");
       }
     }
     fetchStarCount();
@@ -24,13 +37,12 @@ export default function Home() {
 
   async function fetchRandomJoke() {
     setLoading(true);
+    setError(null);
     try {
-      const response = await fetch("/api/jokes/random");
-      if (!response.ok) throw new Error("Request failed");
-      const data = await response.json();
+      const data = await fetchJson<Joke>("/api/jokes/random");
       setJoke(data);
-    } catch (error) {
-      console.error("Failed to fetch joke");
+    } catch {
+      setError("Failed to fetch a joke. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -82,12 +94,18 @@ export default function Home() {
               </div>
               <p className="text-gray-600 mb-6">Click the button below to fetch a random joke from the API.</p>
               <button
+                type="button"
                 onClick={fetchRandomJoke}
                 disabled={loading}
                 className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 font-semibold text-lg shadow-md hover:shadow-lg mb-4"
               >
                 {loading ? "Loading..." : "🎲 Get Random Joke"}
               </button>
+              {error ? (
+                <div className="mb-4 rounded border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                  {error}
+                </div>
+              ) : null}
               <div className="bg-gray-50 p-4 border border-gray-200">
                 <pre className="text-sm overflow-auto text-gray-700">
                   {joke ? JSON.stringify(joke, null, 2) : "{\n  \"Click the button above to get a joke!\"\n}"}

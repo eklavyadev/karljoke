@@ -1,6 +1,6 @@
 # KarlJoke
 
-A free and open-source API to fetch dad jokes, actively maintained with Next.js 14, TypeScript, and Tailwind CSS.
+A free and open-source API to fetch dad jokes, actively maintained with Next.js 16, TypeScript, and Tailwind CSS.
 
 ### Grab a random joke
 [https://karljoke.vercel.app/api/jokes/random](https://karljoke.vercel.app/api/jokes/random)
@@ -14,6 +14,7 @@ Inspired by [official_joke_api](https://github.com/15Dkatz/official_joke_api)
 - **Type-Safe**: Built with TypeScript for better developer experience
 - **Modern UI**: Clean, responsive interface with Tailwind CSS
 - **Fast**: Built on Next.js App Router for optimal performance
+- **Verified Workflow**: Includes a simple automated test suite and production build support
 
 ## Public Endpoints
 
@@ -37,9 +38,9 @@ GET /api/jokes/ten
 GET /api/jokes/{number}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `number`  | `int`    | **Required**. Number of jokes to fetch |
+| Parameter  | Type    | Description                                  |
+| :--------- | :------ | :------------------------------------------- |
+| `number` | `int` | **Required**. Number of jokes to fetch |
 
 #### Get a random joke by type
 
@@ -47,9 +48,9 @@ GET /api/jokes/{number}
 GET /api/jokes/{type}/random
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `type`    | `string` | **Required**. Category of joke    |
+| Parameter | Type       | Description                          |
+| :-------- | :--------- | :----------------------------------- |
+| `type`  | `string` | **Required**. Category of joke |
 
 #### Get ten random jokes by type
 
@@ -57,9 +58,9 @@ GET /api/jokes/{type}/random
 GET /api/jokes/{type}/ten
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `type`    | `string` | **Required**. Category of joke    |
+| Parameter | Type       | Description                          |
+| :-------- | :--------- | :----------------------------------- |
+| `type`  | `string` | **Required**. Category of joke |
 
 #### Get a specific number of random jokes by type
 
@@ -67,10 +68,10 @@ GET /api/jokes/{type}/ten
 GET /api/jokes/{type}/{number}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `type`    | `string` | **Required**. Category of joke    |
-| `number`  | `int`    | **Required**. Number of jokes to fetch |
+| Parameter  | Type       | Description                                  |
+| :--------- | :--------- | :------------------------------------------- |
+| `type`   | `string` | **Required**. Category of joke         |
+| `number` | `int`    | **Required**. Number of jokes to fetch |
 
 ## Example Response
 
@@ -109,6 +110,12 @@ Run the development server
 npm run dev
 ```
 
+Run the regression tests
+
+```bash
+npm test
+```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 Build for production
@@ -138,6 +145,7 @@ Contributions are always welcome! This project is actively maintained and we'd l
 ```
 
 **Available joke types:**
+
 - `general` - General dad jokes and puns
 - `knock-knock` - Classic knock-knock jokes
 - `programming` - Developer and programming humor
