@@ -1,8 +1,8 @@
 # KarlJoke
 
-A free and open-source API to fetch dad jokes, now rebuilt with Next.js 14, TypeScript, and Tailwind CSS.
+A free and open-source API to fetch dad jokes, actively maintained with Next.js 14, TypeScript, and Tailwind CSS.
 
-Inspired by https://github.com/15Dkatz/official_joke_api
+Inspired by [official_joke_api](https://github.com/15Dkatz/official_joke_api)
 
 ## Features
 
@@ -117,22 +117,48 @@ npm start
 
 ## Contributing
 
-Contributions are always welcome!
+Contributions are always welcome! This project is actively maintained and we'd love your help.
 
-### Adding new jokes
+### How to Add New Jokes
 
-To add new jokes, edit `source/jokes.json` with the following structure:
+1. **Edit the jokes file**: Open `source/jokes.json` in your editor
+2. **Find the last joke ID**: Look at the last joke in the array to get the highest ID
+3. **Add your joke**: Add a new joke object with the following structure:
 
 ```json
 {
-  "id": last joke id + 1,
-  "type": "Your category here",
-  "setup": "Your joke here",
-  "punchline": "Your punchline here"
+  "id": <last_id + 1>,
+  "type": "general",
+  "setup": "What did the fish say when it hit the wall?",
+  "punchline": "Dam."
 }
 ```
 
-Please adhere to this project's code of conduct.
+**Available joke types:**
+- `general` - General dad jokes and puns
+- `knock-knock` - Classic knock-knock jokes
+- `programming` - Developer and programming humor
+
+4. **Submit a pull request**: Push your changes and open a PR on GitHub
+
+### Guidelines
+
+- Ensure your joke follows the JSON structure exactly
+- Use an ID that's one higher than the last joke in the file
+- Choose an appropriate type from the available categories
+- Keep jokes family-friendly and appropriate
+- Check for duplicates before submitting
+
+### Pull Request Process
+
+1. Fork the repository
+2. Create a new branch for your feature
+3. Add your jokes to `source/jokes.json`
+4. Commit your changes with a descriptive message
+5. Push to your fork
+6. Open a pull request with a clear description
+
+We review all PRs and merge them promptly. Thank you for contributing!
 
 ## Tech Stack
 
