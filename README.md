@@ -2,6 +2,9 @@
 
 A free and open-source API to fetch dad jokes, actively maintained with Next.js 14, TypeScript, and Tailwind CSS.
 
+### Grab a random joke
+[https://karljoke.vercel.app/api/jokes/random](https://karljoke.vercel.app/api/jokes/random)
+
 Inspired by [official_joke_api](https://github.com/15Dkatz/official_joke_api)
 
 ## Features
